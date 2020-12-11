@@ -1,5 +1,5 @@
 node{
-    stages {
+
          stage('Stat') {
             sh 'echo "starting ..."'
          }
@@ -13,5 +13,5 @@ node{
          stage('END') {
                  sh 'echo "Ending ..."'
          }
-    }
+
 }
