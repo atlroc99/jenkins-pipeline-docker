@@ -1,5 +1,4 @@
 node{
-
          stage('Start') {
             sh 'echo "starting ..."'
          }
@@ -11,7 +10,6 @@ node{
             def MAVEN_HOME = tool name: 'jenkins-maven', type: 'maven'
             sh "${MAVEN_HOME}/bin/mvn package"
          }
-
          stage('END') {
                  sh 'echo "Ending ..."'
          }
