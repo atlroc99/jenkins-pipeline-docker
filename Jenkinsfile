@@ -1,6 +1,6 @@
 node{
 
-         stage('Stat') {
+         stage('Start') {
             sh 'echo "starting ..."'
          }
          stage ('scm checkout git project') {
