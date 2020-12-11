@@ -7,11 +7,13 @@ node{
             git 'https://github.com/atlroc99/jenkins-pipeline-docker.git'
          }
          stage ('maven compile project') {
-            sh 'mvn package'
+            //using as variable in the mvn build command
+            def MAVEN_HOME = tool name: 'jenkins-maven', type: 'maven'
+            sh 'pwd'
+            sh "${MAVEN_HOME}/bin/mvn package"
          }
 
          stage('END') {
                  sh 'echo "Ending ..."'
          }
-
 }
