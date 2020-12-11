@@ -7,7 +7,7 @@ node{
             git 'https://github.com/atlroc99/jenkins-pipeline-docker.git'
          }
          stage ('maven compile project') {
-            sh 'mvn clean package'
+            sh 'mvn package'
          }
 
          stage('END') {
