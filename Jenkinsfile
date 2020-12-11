@@ -9,7 +9,6 @@ node{
          stage ('maven compile project') {
             //using as variable in the mvn build command
             def MAVEN_HOME = tool name: 'jenkins-maven', type: 'maven'
-            sh 'pwd'
             sh "${MAVEN_HOME}/bin/mvn package"
          }
 
