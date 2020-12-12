@@ -18,12 +18,12 @@ node {
 
     stage('Push docker image to ECR') {
         // LOGIN: aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
-        //  1. docker tag e9ae3c220b23 aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
-        // 2. docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
+        //  1. tag your image:  docker tag e9ae3c220b23 aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
+        // 2. push your image:  docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
         sh '''
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 429506819373.dkr.ecr.us-east-1.amazonaws.com
-            docker tag demo:latest 429506819373.dkr.ecr.us-east-1.amazonaws.com/mz-cicd-demo
-            docker push 429506819373.dkr.ecr.us-east-1.amazonaws.com/mz-cicd-demo
+            docker tag demo:latest 429506819373.dkr.ecr.us-east-1.amazonaws.com/fargate
+            docker push 429506819373.dkr.ecr.us-east-1.amazonaws.com/fargate
            '''
     }
 
