@@ -12,7 +12,7 @@ node {
         sh '''
             echo "stop and removing demo-service if running"
             docker stop demo-service || true && docker rm demo-service || true
-            docker run -d -p 8090:8090 --name demo-service demo:latest
+            docker run -d -p 8080:8090 --name demo-service demo:latest
            '''
     }
 
