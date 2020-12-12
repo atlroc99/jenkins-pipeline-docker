@@ -17,7 +17,7 @@ public class DemoController {
     @GetMapping("/test")
     public String test() {
         logger.info("Inside test endpoint...");
-        
+
         return "<h1 style=background-color: red>test-success</h1>";
     }
 }
