@@ -9,6 +9,9 @@ node {
     }
     stage('deploy / run docker container') {
 //           docker run -d --name container_name image_name
-        sh 'docker run -d -p 8090:8090 --name demo-service demo:latest'
+        sh '''
+            docker stop demo-service || true && docker rm demo-service || true
+            docker run -d -p 8090:8090 --name demo-service demo:latest
+           '''
     }
 }
