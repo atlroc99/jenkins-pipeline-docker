@@ -19,7 +19,7 @@ node {
         //  1. docker tag e9ae3c220b23 aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
         // 2. docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
         sh '''
-            docker tag 429506819373.dkr.ecr.us-east-1.amazonaws.com/mz-cicd-demo
+            docker tag demo:latest 429506819373.dkr.ecr.us-east-1.amazonaws.com/mz-cicd-demo
             docker push 429506819373.dkr.ecr.us-east-1.amazonaws.com/mz-cicd-demo
            '''
     }
