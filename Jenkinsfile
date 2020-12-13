@@ -26,7 +26,7 @@ node {
             docker tag demo:latest 429506819373.dkr.ecr.us-east-1.amazonaws.com/fargate
             docker push 429506819373.dkr.ecr.us-east-1.amazonaws.com/fargate
             aws ecs update-service --cluster <cluster> --service <service> --force-new-deployment
-            aws ecs update-service --cluster fargate-test --force-new-deployment
+            aws ecs update-service --cluster fargate-test --service --force-new-deployment
            '''
     }
 
